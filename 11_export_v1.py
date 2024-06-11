@@ -46,8 +46,17 @@ year = today.strftime("%y")
 heading = "---Mini Movie Fundraiser Ticket Data ({}/{}/{}) ---\n".format(day, month, year)
 filename = "MMF_{}_{}_{}".format(year, month, year)
 
+# change frame to a string so that we can export it to file
+mini_movie_string = pandas.DataFrame.to_string(mini_movie_frame)
+
+# create strings for printing...
+ticket_costs_heading = "\n----- Ticket Cost / Profit -----"
+total_ticket_sales = "Total Profit : ${}".format(total)
+total_profit = "Total Profit : ${}".format(profit)
+
+
 
 
 print()
 print('<----Raffle Winner---->')
-print("Congratulations {}. You have won ${} ie: your" " ticket is free!".format(winner_name, total_won))
+print('Congratulations {}. You have won ${} ie: your' ' ticket is free!'.format(winner_name, total_won))
